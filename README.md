@@ -10,7 +10,7 @@ Note: if you have CCleaner or some other cleaning software, uninstall it so that
 <pre>git clone https://github.com/yanbrasiliano/clean-windows.git</pre></p>
 <br>
 <p>2.<strong> Access the file and right click, run as admin user</strong></p>
-<p>Enjoy the script 🏁 <\p>
+<p>Enjoy the script 🏁 </p>
 
 <div align="center">
 <footer>All shared scripts can be used and improved.</footer>
