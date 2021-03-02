@@ -1,21 +1,21 @@
 
-REM Opcional: caso o usu·rio tenha o CCleaner instalado, retirar o REM como coment·rio e utilizar.
-REM taskkill /F /IM "ccleaner64.exe"
-REM taskkill /F /IM "ccleaner.exe"
+:: Optional: if the user has CCleaner installed, remove the comment and use it. 
+::  taskkill /F /IM "ccleaner64.exe"
+::  taskkill /F /IM "ccleaner.exe"
 
-REM ******************** WINDOWS ********************
+::  ******************** WINDOWS ********************
 
-REM Apaga todas as pastas tempor·rias e arquivos tempor·rios do user.
+::  Deletes all user temporary files and temporary files. 
 takeown /A /R /D Y /F C:\Users\%USERNAME%\AppData\Local\Temp\
 icacls C:\Users\%USERNAME%\AppData\Local\Temp\ /grant administradores:F /T /C
 rmdir /q /s C:\Users\%USERNAME%\AppData\Local\Temp\
 
-REM Apaga os arquivos de \Windows\Temp
+::  Delete \Windows\Temp files 
 takeown /A /R /D Y /F C:\windows\temp
 icacls C:\windows\temp /grant administradores:F /T /C
 rmdir /q /s c:\windows\temp
 
-REM Apaga arquivos de log
+::  Delete log files 
 del c:\windows\logs\cbs\*.log
 del C:\Windows\Logs\MoSetup\*.log
 del C:\Windows\Panther\*.log /s /q
@@ -30,9 +30,9 @@ del C:\Users\%USERNAME%\AppData\Local\Microsoft\"Terminal Server Client"\Cache\*
 rmdir /q /s C:\Users\%USERNAME%\AppData\Local\Microsoft\Windows\INetCache\
 
 
-REM RemoÁ„o de logs e cache dos navegadores.
+::  Removing logs and browsers cache. 
 
-REM ******************** EDGE ********************
+::  ******************** EDGE ********************
 taskkill /F /IM "msedge.exe"
 del C:\Users\%USERNAME%\AppData\Local\Microsoft\Edge\"User Data"\Default\Cache\data*.
 del C:\Users\%USERNAME%\AppData\Local\Microsoft\Edge\"User Data"\Default\Cache\f*.
@@ -63,9 +63,8 @@ rmdir /q /s C:\Users\%USERNAME%\AppData\Local\Microsoft\Edge\"User Data"\"Profil
 rmdir /q /s C:\Users\%USERNAME%\AppData\Local\Microsoft\Edge\"User Data"\"Profile 2"\GPUCache\
 rmdir /q /s C:\Users\%USERNAME%\AppData\Local\Microsoft\Edge\"User Data"\"Profile 2"\Storage\ext\
 
-REM ******************** FIREFOX ********************
+::  ******************** FIREFOX ********************
 taskkill /F /IM "firefox.exe"
-REM define qual ù a pasta Profile do usuùrio e apaga os arquivos temporùrios dali
 set parentfolder=C:\Users\%USERNAME%\AppData\Local\Mozilla\Firefox\Profiles\
 for /f "tokens=*" %%a in ('"dir /b "%parentfolder%"|findstr ".*\.default-release""') do set folder=%%a
 del C:\Users\%USERNAME%\AppData\local\Mozilla\Firefox\Profiles\%folder%\cache2\entries\*.
@@ -75,7 +74,7 @@ del C:\Users\%USERNAME%\AppData\local\Mozilla\Firefox\Profiles\%folder%\cache2\i
 del C:\Users\%USERNAME%\AppData\local\Mozilla\Firefox\Profiles\%folder%\startupCache\*.little
 del C:\Users\%USERNAME%\AppData\local\Mozilla\Firefox\Profiles\%folder%\cache2\*.log /s /q
 
-REM ******************** CHROME ********************
+::  ******************** CHROME ********************
 taskkill /F /IM "chrome.exe"
 del C:\Users\%USERNAME%\AppData\Local\Google\Chrome\"User Data"\Default\Cache\data*.
 del C:\Users\%USERNAME%\AppData\Local\Google\Chrome\"User Data"\Default\Cache\f*.
