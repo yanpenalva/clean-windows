@@ -1,3 +1,18 @@
+ 
+rem File name:	 cleaning.bat                
+rem Author:     Yan Brasiliano Silva Penalva	                       
+rem Email:       yanpenabr@hotmail.com
+rem ---------------------------------------------------------------------
+rem Date created:                   
+rem Date last modified: 
+rem License: 
+rem Maintainer: 
+rem Version:
+rem ---------------------------------------------------------------------
+rem Description: 
+rem PT-BR
+rem EN-US
+
 
 :: Optional: if the user has CCleaner installed, remove the comment and use it. 
 ::  taskkill /F /IM "ccleaner64.exe"
