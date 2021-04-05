@@ -5,9 +5,9 @@ rem Email:       yanpenabr@hotmail.com
 rem ---------------------------------------------------------------------
 rem Date created:                   
 rem Date last modified: 
-rem License: 
-rem Maintainer: 
-rem Version:
+rem License:       GPL License
+rem Maintainer:    Yan Brasiliano Silva Penalva
+rem Version:       1.0
 rem ---------------------------------------------------------------------
 rem Description: 
 rem PT-BR
