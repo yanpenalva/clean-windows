@@ -3,15 +3,15 @@ rem File name:	 cleaning.bat
 rem Author:     Yan Brasiliano Silva Penalva	                       
 rem Email:       yanpenabr@hotmail.com
 rem ---------------------------------------------------------------------
-rem Date created:                   
+rem Date created: xxxxxx                  
 rem Date last modified: 
 rem License:       GPL License
 rem Maintainer:    Yan Brasiliano Silva Penalva
 rem Version:       1.0
 rem ---------------------------------------------------------------------
 rem Description: 
-rem PT-BR
-rem EN-US
+rem PT-BR Script com função de substituir softwares de terceiros na limpeza do S.O
+rem EN-US Script with the function of replacing third-party software in the cleaning of the S.O 
 
 
 :: Optional: if the user has CCleaner installed, remove the comment and use it. 
