@@ -4,10 +4,10 @@ rem Author:     Yan Brasiliano Silva Penalva
 rem Email:       yanpenabr@hotmail.com
 rem ---------------------------------------------------------------------
 rem Date created: xxxxxx                  
-rem Date last modified: 
+rem Date last modified: 18/05/21
 rem License:       GPL License
 rem Maintainer:    Yan Brasiliano Silva Penalva
-rem Version:       1.0
+rem Version:       1.1
 rem ---------------------------------------------------------------------
 rem Description: 
 rem PT-BR Script com função de substituir softwares de terceiros na limpeza do S.O
@@ -29,6 +29,33 @@ rmdir /q /s C:\Users\%USERNAME%\AppData\Local\Temp\
 takeown /A /R /D Y /F C:\windows\temp
 icacls C:\windows\temp /grant administradores:F /T /C
 rmdir /q /s c:\windows\temp
+
+IF EXIST c:\windows\temp\ del /f /s /q c:\windows\temp\
+DEL /f /s /q %temp%\
+IF EXIST “C:\Documents and Settings\” (
+for /D %%x in (“C:\Documents and Settings\*”) do (
+rmdir /s /q “%%x\Local Settings\Temporary Internet Files”
+mkdir “%%x\Local Settings\Temporary Internet Files”
+)
+)
+IF EXIST “C:\Documents and Settings\” (
+for /D %%x in (“C:\Documents and Settings\*”) do (
+rmdir /s /q “%%x\Local Settings\Temp”
+mkdir “%%x\Local Settings\Temp”
+)
+)
+IF EXIST “C:\Users\” (
+for /D %%x in (“C:\Users\*”) do (
+rmdir /s /q “%%x\AppData\Local\Temp”
+mkdir “%%x\AppData\Local\Temp”
+)
+)
+IF EXIST “C:\Users\” (
+for /D %%x in (“C:\Users\*”) do (
+rmdir /s /q “%%x\AppData\Local\Microsoft\Windows\Temporary Internet Files”
+mkdir “%%x\AppData\Local\Microsoft\Windows\Temporary Internet Files”
+)
+)
 
 ::  Delete log files 
 del c:\windows\logs\cbs\*.log
