@@ -15,7 +15,7 @@ This script provides basic functionalities to clean up Windows without the need 
 2. **Run the Script as Administrator:**
 
     ```bash
-    .\clean-windows.ps1
+    .\clean.bat
     ```
 
 3. **Follow the Instructions:**
