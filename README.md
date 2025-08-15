@@ -1,42 +1,45 @@
-# Clean Windows - A Script to Replace Cleaning Software 🧹
+# Clean Windows - Simple Cleanup Script 🧹
 
-This script provides basic functionalities to clean up Windows without the need for third-party cleaning software, contributing to user privacy and data protection.
-
-**Note:** If you have CCleaner or any other cleaning software installed, it's recommended to uninstall it to ensure the script runs correctly.
+This batch script performs safe and basic Windows cleanup operations without the need for third-party cleaning software.  
+It focuses on removing temporary files, caches, and other non-essential data to help reclaim disk space and protect privacy.
 
 ## How to Use
 
-1. **Clone the Repository:**
-
+1. **Clone the Repository**:
    ```bash
-   git clone https://github.com/yanbrasiliano/clean-windows.git
-    ```
+   git clone https://github.com/yanpenalva/clean-windows.git
+   ```
 
-2. **Run the Script as Administrator:**
+2. **Run as Administrator**:
+   ```bash
+   .\clean.bat
+   ```
 
-    ```bash
-    .\clean.bat
-    ```
-
-3. **Follow the Instructions:**
-
-    - The script will ask for confirmation before performing each action.
-    - It's recommended to read the script before running it to understand what it does.
+3. **Review Before Running**:
+   - The script does not prompt for confirmation by default — it runs all enabled cleanup steps automatically.
+   - It's strongly recommended to open the script in a text editor and review the actions it performs.
 
 ## Features
 
-- **Privacy:** Removes telemetry, data collection, and tracking.
-- **Performance:** Cleans up temporary files and system caches.
-- **Security:** Disables unnecessary services and scheduled tasks.
-- **Customization:** Allows you to choose which actions to perform.
-- **Safety:** Creates a system restore point before making any changes.
-- **Transparency:** The script is open-source and can be reviewed by anyone.
-  
+- **Privacy**: Clears recent files, browser caches, and Windows Error Reporting data.
+- **Performance**: Removes temporary files, system temp data, and unused update downloads; optimizes drives.
+- **Safety**: Avoids deleting essential system files; only cleans safe-to-remove locations.
+- **Customizable**: Feature flags allow you to enable or disable specific cleanup actions.
+- **Transparent**: Fully open-source; you can inspect and modify before running.
+
+## Important Notes
+
+- This script **does not** remove telemetry or disable Windows services/tasks.  
+- It **does not** create a restore point automatically. If you want a restore point, create one manually before running:
+  ```powershell
+  powershell -NoProfile -Command "Checkpoint-Computer -Description 'Before Clean Windows'"
+  ```
+- For maximum safety, review the code and make sure all cleanup targets are suitable for your system.
+
 ## Disclaimer
 
-This script is provided as-is, without any warranty or guarantee. The author is not responsible for any damage caused by the script. It's recommended to review the script before running it to understand what it does.
+This script is provided as-is, without any warranty. The author is not responsible for any issues that may occur. Always review the code before executing it on your system.
 
 ## License
 
-This project is licensed under the GNU License - see the [LICENSE](LICENSE) file for details.
-
+Licensed under the GNU General Public License — see the [LICENSE](LICENSE) file for details.
